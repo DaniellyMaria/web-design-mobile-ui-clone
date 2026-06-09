@@ -81,7 +81,7 @@ Concluído.
 
 Imagem utilizada como base para a replicação da interface mobile.
 
-![Interface de referência](./public/images/reference-ui.webp)
+![Interface de referência](./public/images/reference-ui.png)
 
 ## Resultado Desenvolvido
 
