@@ -1,6 +1,7 @@
+import { useState } from 'react';
 import MobileScreen from '../components/MobileScreen';
-import ProfileHeader from '../components/ProfileHeader';
 import ActionButton from '../components/ActionButton';
+import ProfileHeader from '../components/ProfileHeader';
 import RideRequestCard from '../components/RideRequestCard';
 
 import {
@@ -16,6 +17,8 @@ import motoristaImg from '../assets/motorista.jpg';
 import pessoaImg from '../assets/pessoa-1.jpg';
 
 function NewRideRequest() {
+  const [activeAction, setActiveAction] = useState('Ride');
+
   return (
     <MobileScreen>
       <div className="top-bar">
@@ -31,10 +34,33 @@ function NewRideRequest() {
       />
 
       <section className="actions-row">
-        <ActionButton icon={<Car size={20} />} label="Ride" active />
-        <ActionButton icon={<Mail size={20} />} label="Message" />
-        <ActionButton icon={<Heart size={20} />} label="Rating" />
-        <ActionButton icon={<Activity size={20} />} label="My feed" />
+        <ActionButton
+          icon={<Car size={20} />}
+          label="Ride"
+          active={activeAction === 'Ride'}
+          onClick={() => setActiveAction('Ride')}
+        />
+
+        <ActionButton
+          icon={<Mail size={20} />}
+          label="Message"
+          active={activeAction === 'Message'}
+          onClick={() => setActiveAction('Message')}
+        />
+
+        <ActionButton
+          icon={<Heart size={20} />}
+          label="Rating"
+          active={activeAction === 'Rating'}
+          onClick={() => setActiveAction('Rating')}
+        />
+
+        <ActionButton
+          icon={<Activity size={20} />}
+          label="My feed"
+          active={activeAction === 'My feed'}
+          onClick={() => setActiveAction('My feed')}
+        />
       </section>
 
       <RideRequestCard passengerImage={pessoaImg} />
