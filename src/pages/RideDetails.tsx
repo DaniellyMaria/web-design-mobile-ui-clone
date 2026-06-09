@@ -2,14 +2,18 @@ import { useState } from 'react';
 import MobileScreen from '../components/MobileScreen';
 import CalendarSelector from '../components/CalendarSelector';
 import RideCard from '../components/RideCard';
+import CarSeatIcon from '../components/CarSeatIcon';
 
 import {
-  ArrowLeft,
-  SlidersHorizontal,
-  MapPin,
+  ChevronLeft,
+  SlidersVertical,
 } from 'lucide-react';
 
 import pessoa1 from '../assets/pessoa-1.jpg';
+import pessoa2 from '../assets/pessoa-2.jpg';
+import pessoa3 from '../assets/pessoa-3.jpg';
+import pessoa4 from '../assets/pessoa-4.jpg';
+import pessoa5 from '../assets/pessoa-5.jpg';
 import motorista from '../assets/motorista.jpg';
 
 const calendarDays = [
@@ -27,9 +31,15 @@ function RideDetails() {
     <MobileScreen variant="blue">
       <section className="ride-details-screen">
         <header className="ride-header">
+
           <div className="ride-top-icons">
-            <ArrowLeft size={22} />
-            <SlidersHorizontal size={22} />
+            <button type="button" className="icon-button">
+              <ChevronLeft size={22} strokeWidth={2.2} />
+            </button>
+
+            <button type="button" className="icon-button">
+              <SlidersVertical size={20} strokeWidth={2.2} />
+            </button>
           </div>
 
           <h1>Ride</h1>
@@ -48,7 +58,7 @@ function RideDetails() {
             distance="Distance 15,8 km"
             startTime="20:00"
             endTime="22:30"
-            passengerImages={[pessoa1, motorista]}
+            passengerImages={[pessoa2, pessoa4]}
           />
 
           <RideCard
@@ -57,11 +67,11 @@ function RideDetails() {
             distance="Distance 19,3 km"
             startTime="21:45"
             endTime="22:40"
-            passengerImages={[motorista, pessoa1]}
+            passengerImages={[pessoa5, pessoa3]}
             showFoodIcon={false}
             extraPassengerIcon={
               <span className="pink-passenger">
-                <MapPin size={14} />
+                <CarSeatIcon size={21} />
               </span>
             }
           />

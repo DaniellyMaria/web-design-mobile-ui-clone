@@ -75,4 +75,16 @@ O projeto foi desenvolvido com foco na fidelidade visual da interface original, 
 
 ## Status do projeto
 
-Em desenvolvimento.
+Concluído.
+
+## Interface de Referência
+
+Imagem utilizada como base para a replicação da interface mobile.
+
+![Interface de referência](./public/images/reference-ui.webp)
+
+## Resultado Desenvolvido
+
+Resultado final implementado com React, TypeScript, Vite e CSS.
+
+![Resultado do projeto](./public/project-result.png)

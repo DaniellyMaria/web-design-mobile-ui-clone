@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { Wifi, Briefcase, Utensils } from 'lucide-react';
+import { Wifi, Briefcase, Plug } from 'lucide-react';
 import RouteInfo from './RouteInfo';
 
 type RideCardProps = {
@@ -37,7 +37,7 @@ function RideCard({
 
           {showFoodIcon && (
             <span>
-              <Utensils size={14} />
+              <Plug size={14} />
             </span>
           )}
         </div>

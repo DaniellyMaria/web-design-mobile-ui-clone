@@ -15,17 +15,47 @@ function RouteInfo({
   endTime,
   variant = 'request',
 }: RouteInfoProps) {
-  const prefix = variant === 'ride' ? 'ride-' : '';
+  if (variant === 'ride') {
+    return (
+      <div className="ride-route-card">
+        <div className="ride-stop">
+          <div className="ride-marker">
+            <span className="ride-dot filled"></span>
+            <span className="ride-line"></span>
+          </div>
+
+          <div className="ride-place">
+            <h4>{origin}</h4>
+            <span>{distance}</span>
+          </div>
+
+          <span className="ride-time">{startTime}</span>
+        </div>
+
+        <div className="ride-stop">
+          <div className="ride-marker">
+            <span className="ride-dot"></span>
+          </div>
+
+          <div className="ride-place">
+            <h4>{destination}</h4>
+          </div>
+
+          <span className="ride-time">{endTime}</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className={`${prefix}route`}>
-      <div className={`${prefix}route-line`}>
-        <span className={variant === 'ride' ? 'ride-dot filled' : 'dot filled'}></span>
-        <span className={variant === 'ride' ? 'ride-line' : 'line'}></span>
-        <span className={variant === 'ride' ? 'ride-dot' : 'dot'}></span>
+    <div className="route">
+      <div className="route-line">
+        <span className="dot filled"></span>
+        <span className="line"></span>
+        <span className="dot"></span>
       </div>
 
-      <div className={variant === 'ride' ? 'ride-route-info' : 'route-content'}>
+      <div className="route-content">
         <div>
           <h4>{origin}</h4>
           <span>{distance}</span>
@@ -36,7 +66,7 @@ function RouteInfo({
         </div>
       </div>
 
-      <div className={variant === 'ride' ? 'ride-route-times' : 'route-times'}>
+      <div className="route-times">
         <span>{startTime}</span>
         <span>{endTime}</span>
       </div>
